@@ -1,3 +1,14 @@
+// var $ = require("jquery");
+
+
+
+var mySound;
+mySound = new sound("vgame.mp3");
+
+mySound.play();
+
+
+
 function sound(src) {
     this.sound = document.createElement("audio");
     this.sound.src = src;
@@ -15,16 +26,3 @@ function sound(src) {
         this.sound.pause();
     }
 }
-
-var mySound;
-mySound = new sound("vgame.mp3");
-
-mySound.play();
-
-// $('.enter').click(function () {
-//     $(this).parent('#splashscreen').fadeOut(500);
-// });
-document.getElementById("play").onclick = function () {
-    location.href = "index.html";
-};
-

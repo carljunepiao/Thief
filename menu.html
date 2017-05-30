@@ -3,17 +3,20 @@
     <head>
         <title>Shoot 'Em Up</title>
 	    <link rel="stylesheet" href="css/menu.css" width = "500" height = "350" style = "border:1px solid #000000;" >
+	    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="menu.js"></script>
+
     </head>
     <body>
        <div id="splashscreen">
 	    	<button id="play" class="enter">
                 PLAY
             </button>
-
-            <button id="settings" class="enter">
-                SETTINGS
-            </button>
 		</div>
+		<script>
+			$('.enter').click(function () {
+			    $(this).parent('#splashscreen').fadeOut(500);
+			});
+		</script>
     </body>
 </html>
-<script src="menu.js"></script>
