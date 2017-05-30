@@ -527,7 +527,7 @@ var Level4 = new Level(4);
 function LevelDesign(){
 
 //LEVEL 1
-Level0.startPlayer(3,2);
+	Level0.startPlayer(3,2);
 	Level0.placeRoom(1,0,"right");
 	Level0.placeRoom(1,1,"right");
 	Level0.placeRoom(1,2,"right");
@@ -620,10 +620,7 @@ Level0.startPlayer(3,2);
 	Level0.setDestination(1,3,3);
 	Level0.setDestination(1,2,3);
 	Level0.setDestination(1,2,2);
-
 	Level0.placeSafe(6,3);
-
-	
 
 //LEVEL 2
 	Level1.startPlayer(0,0);
@@ -683,13 +680,6 @@ Level0.startPlayer(3,2);
 	Level1.clearGuard();
 
 	Level1.placeSafe(6,4);
-//   [0,0][0,1][0,2][0,3][0,4]
-//   [1,0][1,1][1,2][1,3][1,4]
-//   [2,0][2,1][2,2][2,3][2,4]
-//   [3,0][3,1][3,2][3,3][3,4]
-//   [4,0][4,1][4,2][4,3][4,4]
-//   [5,0][5,1][5,2][5,3][5,4]
-//   [6,0][6,1][6,2][6,3][6,4]
 	Level1.addGuard(4,0);
 	Level1.setDestination(0,5,0);
 	Level1.setDestination(0,6,0);
@@ -809,13 +799,24 @@ Level0.startPlayer(3,2);
 	Level3.placeSafe(6,3); // Level0.placeSafe(6,3);
 	
 	Level3.addGuard(1,4);
-	Level3.setDestination(0,1,3);
-	Level3.setDestination(0,1,2);
-	Level3.setDestination(0,2,2);
-	Level3.setDestination(0,3,2);
-	Level3.setDestination(0,3,3);
-	Level3.setDestination(0,3,4);
 	Level3.setDestination(0,2,4);
+	Level3.setDestination(0,3,4);
+	Level3.setDestination(0,3,3);
+	Level3.setDestination(0,3,2);
+	Level3.setDestination(0,2,2);
+	Level3.setDestination(0,1,2);
+	Level3.setDestination(0,1,3);
+
+	Level3.addGuard(3,0);
+	Level3.setDestination(1,4,0);
+	Level3.setDestination(1,5,0);
+	Level3.setDestination(1,5,1);
+	Level3.setDestination(1,5,2);
+	Level3.setDestination(1,4,2);
+	Level3.setDestination(1,3,2);
+	Level3.setDestination(1,3,1);
+
+
 //LEVEL 5
 	Level4.startPlayer(6,3);
 	Level4.placeRoom(6,3,"right");

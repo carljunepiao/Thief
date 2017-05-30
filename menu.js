@@ -21,3 +21,7 @@ function sound(src) {
         this.sound.pause();
     }
 }
+
+document.getElementById("play").onclick = function () {
+    location.href = "index.html";
+};

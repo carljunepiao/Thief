@@ -9,7 +9,6 @@ html, body{
 
 body {
     background-image:url(../images/bg.jpg);
-    background-color:#0c0129;
     background-position:center;
     background-size:cover;
     background-blend-mode:medium;
@@ -19,9 +18,8 @@ body {
 }
 
 .enter{
-
-    margin: 30px auto;
-    margin-top: 540px;
+    margin: 50px auto;
+    margin-top: 560px;
     display:block;
     width:180px;
     height:50px;
