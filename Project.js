@@ -148,6 +148,24 @@ function World(){
 	}
 }
 
+function sound(src) {
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    
+    document.body.appendChild(this.sound);
+    
+    this.play = function(){
+        this.sound.play();
+    }
+    
+    this.stop = function(){
+        this.sound.pause();
+    }
+}
+
 function Tile(tile_x, tile_y){
 	this.scale = 50; //the size of the entire tile on x axiz and y axis
 	this.positionx = tile_x; //the x-position of the tile in the canvas
@@ -160,6 +178,8 @@ function Tile(tile_x, tile_y){
 	this.passed = false;
 	this.value = 0;
 	this.hasSafe = false;
+	this.safe = new Image();
+	this.safe.src = "images/Safe.png"
 	
 	//draws the said tile
 	this.draw = function(){
@@ -186,10 +206,12 @@ function Tile(tile_x, tile_y){
 			rightvalue = 2;
 
 		ctx.fillRect(this.positionx+leftvalue, this.positiony+topvalue, this.scale-rightvalue-leftvalue, this.scale-topvalue-downvalue);
-
+		
 		ctx.fillStyle = "#5f5";
-		if(this.hasSafe)
-			ctx.fillRect(this.positionx+leftvalue+((this.scale/6)*4), this.positiony+topvalue+((this.scale/5)*2), this.scale/6, this.scale/5);
+		if(this.hasSafe){
+			//ctx.fillRect(this.positionx+leftvalue+((this.scale/6)*4), this.positiony+topvalue+((this.scale/5)*2), this.scale/6, this.scale/5);
+			ctx.drawImage(this.safe, 100*frame, 0, 100, 100, this.positionx, this.positiony, 50, 50);
+		}
 
 	}
 	
@@ -207,11 +229,15 @@ function Person(){
 	this.scale = 10; //the scale of the player in the canvas
 	this.positionx = 0; //the xposition of the person in the 2d array world
 	this.positiony = 0; //the xposition of the person in the 2d array world
+	this.thief = new Image();
+	this.thief.src = "images/Thief.png"
 	//draws the person
 	
 	this.draw = function(){
 		ctx.fillStyle = "#206060";
-		ctx.fillRect((this.positionx*50)+145, (this.positiony*50)+20, this.scale, this.scale);
+		// ctx.fillRect((this.positionx*50)+145, (this.positiony*50)+20, this.scale, this.scale);
+		console.log(this.positionx, this.positiony);
+		ctx.drawImage(this.thief, frame*100 , 0, 100, 100, (this.positionx*50)+125, this.positiony*50, 50, 50);
 	}
 	
 	this.setPosition = function(x,y){
@@ -223,24 +249,6 @@ function Person(){
 var mySound;
 mySound = new sound("vgame.mp3");
 
-//Add controls later
-function sound(src) {
-    this.sound = document.createElement("audio");
-    this.sound.src = src;
-    this.sound.setAttribute("preload", "auto");
-    this.sound.setAttribute("controls", "none");
-    this.sound.style.display = "none";
-    
-    document.body.appendChild(this.sound);
-    
-    this.play = function(){
-        this.sound.play();
-    }
-    
-    this.stop = function(){
-        this.sound.pause();
-    }
-}
 
 function Level(levelnumber){
 	this.value = levelnumber;
@@ -305,10 +313,10 @@ function Level(levelnumber){
 	//draws the world and the player
 	this.draw = function(){
 		this.gameWorld.draw();
-		this.player.draw();
 		for(i=0; i < this.guardSize; i++){
 			this.guard[i].draw();
 		}
+		this.player.draw();
 	}
 	
 	this.updateLevel = function(){
@@ -424,6 +432,8 @@ function Guard(){
 	this.state  = 0;//Normal State is 0, Warning State is 1, Alert State is 2
 	this.nextPositionx = [];
 	this.nextPositiony = [];
+	this.guard = new Image();
+	this.guard.src = "images/Guard.png";
 
 	this.setPosition = function(y,x){
 		this.nextPositionx.push(x);
@@ -446,7 +456,8 @@ function Guard(){
 	}
 	this.draw = function(){
 		ctx.fillStyle = "#f55";
-		ctx.fillRect((this.positionx*50)+140, (this.positiony*50)+15, this.scale, this.scale);
+		//ctx.fillRect((this.positionx*50)+140, (this.positiony*50)+15, this.scale, this.scale);
+		ctx.drawImage(this.guard, frame*100 , 0, 100, 100, (this.positionx*50)+125, this.positiony*50, 50, 50);
 	}
 	this.checkPosition = function(x,y){
 		if(x == this.positionx && y == this.positiony){
@@ -462,7 +473,6 @@ var moveDown = false;
 var moveLeft = false;
 var moveRight = false;
 var interaction = false;
-
 document.onkeydown = function(event){
 	switch(event.keyCode){
 		//left
@@ -518,7 +528,7 @@ var Level4 = new Level(4);
 function LevelDesign(){
 
 //LEVEL 1
-	Level0.startPlayer(3,2);
+Level0.startPlayer(3,2);
 	Level0.placeRoom(1,0,"right");
 	Level0.placeRoom(1,1,"right");
 	Level0.placeRoom(1,2,"right");
@@ -613,6 +623,9 @@ function LevelDesign(){
 	Level0.setDestination(1,2,2);
 
 	Level0.placeSafe(6,3);
+
+	
+
 //LEVEL 2
 	Level1.startPlayer(0,0);
 	Level1.placeRoom(0,0,"right");
@@ -671,6 +684,13 @@ function LevelDesign(){
 	Level1.clearGuard();
 
 	Level1.placeSafe(6,4);
+//   [0,0][0,1][0,2][0,3][0,4]
+//   [1,0][1,1][1,2][1,3][1,4]
+//   [2,0][2,1][2,2][2,3][2,4]
+//   [3,0][3,1][3,2][3,3][3,4]
+//   [4,0][4,1][4,2][4,3][4,4]
+//   [5,0][5,1][5,2][5,3][5,4]
+//   [6,0][6,1][6,2][6,3][6,4]
 	Level1.addGuard(4,0);
 	Level1.setDestination(0,5,0);
 	Level1.setDestination(0,6,0);
@@ -688,6 +708,7 @@ function LevelDesign(){
 	Level1.setDestination(1,2,3);
 	Level1.setDestination(1,2,2);
 	Level1.setDestination(1,1,2);
+
 //LEVEL 3
 	Level2.startPlayer(0,1);
 	Level2.placeRoom(0,1,"down");
@@ -731,8 +752,10 @@ function LevelDesign(){
 	Level2.placeRoom(0,2,"right");
 	Level2.placeRoom(0,2,"down");
 	Level2.placeRoom(0,2,"left");
+
 	Level2.checkValues();
 	Level2.clearGuard();
+
 	Level2.addGuard(1,0);
 	Level2.setDestination(0,2,0);
 	Level2.setDestination(0,3,0);
@@ -741,6 +764,7 @@ function LevelDesign(){
 	Level2.setDestination(0,2,2);
 	Level2.setDestination(0,1,2);
 	Level2.setDestination(0,1,1);
+
 	Level2.addGuard(0,4);
 	Level2.setDestination(1,1,4);
 	Level2.setDestination(1,2,4);
@@ -749,7 +773,9 @@ function LevelDesign(){
 	Level2.setDestination(1,1,2);
 	Level2.setDestination(1,0,2);
 	Level2.setDestination(1,0,3);
+
 	Level2.placeSafe(6,4); //Level1.placeSafe(6,4); //
+	
 //LEVEL 4
 	Level3.startPlayer(0,0);
 	Level3.placeRoom(0,0,"right");
@@ -882,6 +908,7 @@ function LevelDesign(){
 var Speed = 2;
 var Counter = 10;
 var levelctr = 0;
+var frame = 0;
 
 LevelDesign();
 function Update(){
@@ -907,6 +934,9 @@ function Update(){
 				Level5.moveGuard();
 				break;
 		}
+	}
+	if(frame >= 4){
+		frame = 0;;
 	}
 
 	ctx.fillStyle = "#000";
@@ -954,6 +984,7 @@ function Update(){
 			Level4.fightGuard();
 			break;
 	}
+	frame++;
 	Counter -= Speed;
 }
 //setInterval - loops a function update for every 40 ms
