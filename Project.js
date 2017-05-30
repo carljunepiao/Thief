@@ -148,6 +148,7 @@ function World(){
 	}
 }
 
+//Add controls later
 function sound(src) {
     this.sound = document.createElement("audio");
     this.sound.src = src;
@@ -239,7 +240,6 @@ function Person(){
 
 var mySound;
 mySound = new sound("vgame.mp3");
-
 
 function Level(levelnumber){
 	this.value = levelnumber;
@@ -461,6 +461,7 @@ var moveDown = false;
 var moveLeft = false;
 var moveRight = false;
 var interaction = false;
+
 document.onkeydown = function(event){
 	switch(event.keyCode){
 		//left
@@ -516,7 +517,7 @@ var Level4 = new Level(4);
 function LevelDesign(){
 
 //LEVEL 1
-Level0.startPlayer(3,2);
+	Level0.startPlayer(3,2);
 	Level0.placeRoom(1,0,"right");
 	Level0.placeRoom(1,1,"right");
 	Level0.placeRoom(1,2,"right");
@@ -611,9 +612,6 @@ Level0.startPlayer(3,2);
 	Level0.setDestination(1,2,2);
 
 	Level0.placeSafe(6,3);
-
-	
-
 //LEVEL 2
 	Level1.startPlayer(0,0);
 	Level1.placeRoom(0,0,"right");
@@ -672,13 +670,6 @@ Level0.startPlayer(3,2);
 	Level1.clearGuard();
 
 	Level1.placeSafe(6,4);
-//   [0,0][0,1][0,2][0,3][0,4]
-//   [1,0][1,1][1,2][1,3][1,4]
-//   [2,0][2,1][2,2][2,3][2,4]
-//   [3,0][3,1][3,2][3,3][3,4]
-//   [4,0][4,1][4,2][4,3][4,4]
-//   [5,0][5,1][5,2][5,3][5,4]
-//   [6,0][6,1][6,2][6,3][6,4]
 	Level1.addGuard(4,0);
 	Level1.setDestination(0,5,0);
 	Level1.setDestination(0,6,0);
@@ -696,7 +687,6 @@ Level0.startPlayer(3,2);
 	Level1.setDestination(1,2,3);
 	Level1.setDestination(1,2,2);
 	Level1.setDestination(1,1,2);
-
 //LEVEL 3
 	Level2.startPlayer(0,1);
 	Level2.placeRoom(0,1,"down");
@@ -740,10 +730,8 @@ Level0.startPlayer(3,2);
 	Level2.placeRoom(0,2,"right");
 	Level2.placeRoom(0,2,"down");
 	Level2.placeRoom(0,2,"left");
-
 	Level2.checkValues();
 	Level2.clearGuard();
-
 	Level2.addGuard(1,0);
 	Level2.setDestination(0,2,0);
 	Level2.setDestination(0,3,0);
@@ -752,7 +740,6 @@ Level0.startPlayer(3,2);
 	Level2.setDestination(0,2,2);
 	Level2.setDestination(0,1,2);
 	Level2.setDestination(0,1,1);
-
 	Level2.addGuard(0,4);
 	Level2.setDestination(1,1,4);
 	Level2.setDestination(1,2,4);
@@ -761,9 +748,7 @@ Level0.startPlayer(3,2);
 	Level2.setDestination(1,1,2);
 	Level2.setDestination(1,0,2);
 	Level2.setDestination(1,0,3);
-
 	Level2.placeSafe(6,4); //Level1.placeSafe(6,4); //
-	
 //LEVEL 4
 	Level3.startPlayer(0,0);
 	Level3.placeRoom(0,0,"right");
