@@ -6,21 +6,14 @@
     </head>
     <body>
        <div id="splashscreen">
-	    	<button id="ebut" class="enter">
+	    	<button id="play" class="enter">
                 PLAY
             </button>
-	
-			<script src="jquery.min.js">
-				$('.enter').click(function () {
-				    $(this).parent('#splashscreen').fadeOut(500);
-				});
-			</script>
-			<script type="text/javascript">
-			    document.getElementById("ebut").onclick = function () {
-			        location.href = "index.html";
-			    };
-			</script>
+
+            <button id="settings" class="enter">
+                SETTINGS
+            </button>
 		</div>
     </body>
- 
 </html>
+<script src="menu.js"></script>
