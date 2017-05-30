@@ -178,6 +178,8 @@ function Tile(tile_x, tile_y){
 	this.passed = false;
 	this.value = 0;
 	this.hasSafe = false;
+	this.safe = new Image();
+	this.safe.src = "images/Safe.png"
 	
 	//draws the said tile
 	this.draw = function(){
@@ -203,10 +205,12 @@ function Tile(tile_x, tile_y){
 			rightvalue = 2;
 
 		ctx.fillRect(this.positionx+leftvalue, this.positiony+topvalue, this.scale-rightvalue-leftvalue, this.scale-topvalue-downvalue);
-
+		
 		ctx.fillStyle = "#5f5";
-		if(this.hasSafe)
-			ctx.fillRect(this.positionx+leftvalue+((this.scale/6)*4), this.positiony+topvalue+((this.scale/5)*2), this.scale/6, this.scale/5);
+		if(this.hasSafe){
+			//ctx.fillRect(this.positionx+leftvalue+((this.scale/6)*4), this.positiony+topvalue+((this.scale/5)*2), this.scale/6, this.scale/5);
+			ctx.drawImage(this.safe, 100*frame, 0, 100, 100, this.positionx, this.positiony, 50, 50);
+		}
 
 	}
 	
@@ -224,11 +228,15 @@ function Person(){
 	this.scale = 10; //the scale of the player in the canvas
 	this.positionx = 0; //the xposition of the person in the 2d array world
 	this.positiony = 0; //the xposition of the person in the 2d array world
+	this.thief = new Image();
+	this.thief.src = "images/Thief.png"
 	//draws the person
 	
 	this.draw = function(){
 		ctx.fillStyle = "#206060";
-		ctx.fillRect((this.positionx*50)+145, (this.positiony*50)+20, this.scale, this.scale);
+		// ctx.fillRect((this.positionx*50)+145, (this.positiony*50)+20, this.scale, this.scale);
+		console.log(this.positionx, this.positiony);
+		ctx.drawImage(this.thief, frame*100 , 0, 100, 100, (this.positionx*50)+125, this.positiony*50, 50, 50);
 	}
 	
 	this.setPosition = function(x,y){
@@ -304,10 +312,10 @@ function Level(levelnumber){
 	//draws the world and the player
 	this.draw = function(){
 		this.gameWorld.draw();
-		this.player.draw();
 		for(i=0; i < this.guardSize; i++){
 			this.guard[i].draw();
 		}
+		this.player.draw();
 	}
 	
 	this.updateLevel = function(){
@@ -423,6 +431,8 @@ function Guard(){
 	this.state  = 0;//Normal State is 0, Warning State is 1, Alert State is 2
 	this.nextPositionx = [];
 	this.nextPositiony = [];
+	this.guard = new Image();
+	this.guard.src = "images/Guard.png";
 
 	this.setPosition = function(y,x){
 		this.nextPositionx.push(x);
@@ -445,7 +455,8 @@ function Guard(){
 	}
 	this.draw = function(){
 		ctx.fillStyle = "#f55";
-		ctx.fillRect((this.positionx*50)+140, (this.positiony*50)+15, this.scale, this.scale);
+		//ctx.fillRect((this.positionx*50)+140, (this.positiony*50)+15, this.scale, this.scale);
+		ctx.drawImage(this.guard, frame*100 , 0, 100, 100, (this.positionx*50)+125, this.positiony*50, 50, 50);
 	}
 	this.checkPosition = function(x,y){
 		if(x == this.positionx && y == this.positiony){
@@ -896,6 +907,7 @@ Level0.startPlayer(3,2);
 var Speed = 2;
 var Counter = 10;
 var levelctr = 0;
+var frame = 0;
 
 LevelDesign();
 function Update(){
@@ -921,6 +933,9 @@ function Update(){
 				Level5.moveGuard();
 				break;
 		}
+	}
+	if(frame >= 4){
+		frame = 0;;
 	}
 
 	ctx.fillStyle = "#000";
@@ -968,6 +983,7 @@ function Update(){
 			Level4.fightGuard();
 			break;
 	}
+	frame++;
 	Counter -= Speed;
 }
 //setInterval - loops a function update for every 40 ms
