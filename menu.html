@@ -6,11 +6,31 @@
     </head>
 
     <body>
-       <div id="splashscreen">
-	    	<button id="play" class="enter">
-                PLAY
-            </button>
+    	<div id="overlay" onclick="off()">
+	 		<canvas id = "canvas" width = "500" height = "350" style = "border:1px solid #000000;" ></canvas>
+
+    		<h1>INTRODUCTION</h1>
+				<p>The goal of the game is to get pass through the guards and step all the tiles before reaching the treasured ring. Avoid the guards and get pass through all 5 levels in this game of Thief!</p>
+    		<h1>CONTROLS</h1>
+    			<p>W - UP <br> A - LEFT <br> D - LEFT <br> S - DOWN</p>
+    	</div>
+
+	   	<div id="splashscreen">
+	       	<div class="pl">
+		    	<button id="play" class="enter">
+	                PLAY
+	            </button>       		
+	       	</div>
+
+	       	<div class="ins">
+	            <button id="instructions" class="enter" onclick="on()">
+	                INSTRUCTIONS
+	            </button>
+	       	</div>
+
 		</div>
+
+
     </body>
 </html>
 <script src="menu.js"></script>

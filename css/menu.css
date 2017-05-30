@@ -17,11 +17,13 @@ body {
     background-attachment: fixed;
 }
 
+#splashscreen {
+    margin-top: 500px;
+}
 .enter{
-    margin: 50px auto;
-    margin-top: 560px;
+    margin: 30px auto;
     display:block;
-    width:180px;
+    width:210px;
     height:50px;
     font-size:15pt;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -33,11 +35,103 @@ body {
     border-radius: 5px;
     transition: background-color 1000ms, color 1000ms;
 }
+
 .enter:hover{
     background-color:rgba(255,255,255,1);
     color:#222;
     cursor:pointer;
     font-size: 150%;
-    
     transition: background-color 1000ms, color 1000ms;
+}
+
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(1,1,1,1);
+    z-index: 2;
+    cursor: pointer;
+}
+
+#overlay > #canvas {
+    margin-top: 10px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 700px;
+    height: 300px;
+    margin-bottom: 30px;
+
+}
+
+#overlay > h1 {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px 0;
+    padding: 10px 0;
+    color: white;
+
+    margin: 0;
+    padding: 0;
+
+    font-family: "Prociono";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 100%;
+    color: #F2F2F2;
+    mix-blend-mode: normal;
+    opacity: 1.00;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#overlay > h2 {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    text-decoration: none !important;
+    margin: 0;
+    padding: 0;
+    
+    font-family: "Jura";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 100%;
+    color: #F2F2F2;
+    opacity: 1.00;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#overlay > p{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 200px;
+    color: white;
+    margin-right: 200px;
+    text-align:center;
+    text-justify:inter-word;
+    line-height: 25px;
+    font-family: "Jura";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 150%;
+    color: #F2F2F2;
+    opacity: 1.00;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
 }

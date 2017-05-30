@@ -983,6 +983,10 @@ function Update(){
 			}
 			Level4.fightGuard();
 			break;
+		case 5:
+			ctx.fillStyle = "#fff";
+            ctx.font = "40px Arial";
+            ctx.fillText("  You Win!",150,200);
 	}
 	frame++;
 	Counter -= Speed;
