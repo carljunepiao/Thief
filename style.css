@@ -1,6 +1,7 @@
 body{
 	text-align = center;
-	background-color: black;
+
+	background-image:url("images/mat.gif");
 }
 
 p {

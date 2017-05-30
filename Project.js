@@ -189,12 +189,12 @@ function Tile(tile_x, tile_y){
 		var leftvalue = 0;
 		if(this.passed){
 			if(this.value == 0)
-				ctx.fillStyle = "#777";
+				ctx.fillStyle = "#768";
 			else if(this.value == 1)
-				ctx.fillStyle = "#99bcff";
+				ctx.fillStyle = "#99FF99";
 		}
 		else
-			ctx.fillStyle = "#111";
+			ctx.fillStyle = "#122";
 		if(!this.topdoor)
 			topvalue = 2;
 		if(!this.downdoor)
@@ -206,7 +206,7 @@ function Tile(tile_x, tile_y){
 
 		ctx.fillRect(this.positionx+leftvalue, this.positiony+topvalue, this.scale-rightvalue-leftvalue, this.scale-topvalue-downvalue);
 		
-		ctx.fillStyle = "#5f5";
+		ctx.fillStyle = "#5f4";
 		if(this.hasSafe){
 			//ctx.fillRect(this.positionx+leftvalue+((this.scale/6)*4), this.positiony+topvalue+((this.scale/5)*2), this.scale/6, this.scale/5);
 			ctx.drawImage(this.safe, 100*frame, 0, 100, 100, this.positionx, this.positiony, 50, 50);
@@ -233,7 +233,7 @@ function Person(){
 	//draws the person
 	
 	this.draw = function(){
-		ctx.fillStyle = "#206060";
+		ctx.fillStyle = "#206067";
 		// ctx.fillRect((this.positionx*50)+145, (this.positiony*50)+20, this.scale, this.scale);
 		console.log(this.positionx, this.positiony);
 		ctx.drawImage(this.thief, frame*100 , 0, 100, 100, (this.positionx*50)+125, this.positiony*50, 50, 50);
