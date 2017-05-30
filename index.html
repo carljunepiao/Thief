@@ -4,6 +4,7 @@
 	    <title>Find the SAFE</title>
 
 	    <link rel="stylesheet" href="css/style.css">
+	    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 	</head>
 	<body style = "text-align:  center;" bgcolor="#000">
 	 	<canvas id = "canvas" width = "500" height = "350" style = "border:1px solid #000000;" ></canvas>
@@ -12,6 +13,25 @@
 	  	<p>Joshua Majait</p>
 	  	<p>Carl-June Piao</p>
 	  	<p>Dave Irasusta</p>
+	  	<script>
+			// $('.enter').click(function () {
+			//     $(this).parent(body).fadeOut(500);
+			// });
+			$(document).ready(function() {
+			    $('body').css('display', 'none');
+			    $('body').fadeIn(2000);
+			    $('a.switch').click(function(event) {
+			        event.preventDefault();
+			        newLocation = this.href;
+			        $('body').fadeOut(2000, newpage);
+			    });
+
+			    function newpage() {
+			        window.location = newLocation;
+			    }
+
+			});
+		</script>
 	</body>
 </html>
 <script src="Project.js"></script>

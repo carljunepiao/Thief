@@ -1,12 +1,7 @@
-// var $ = require("jquery");
-
-
-
 var mySound;
 mySound = new sound("vgame.mp3");
 
 mySound.play();
-
 
 
 function sound(src) {

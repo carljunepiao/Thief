@@ -343,6 +343,7 @@ function Level(levelnumber){
 					this.player.positiony--;
 					this.enterRoom();
 				}
+			moveUp = false;
 		}
 		if(moveDown){
 			if(this.player.positiony < 6)
@@ -351,6 +352,7 @@ function Level(levelnumber){
 					this.player.positiony++;
 					this.enterRoom();
 				}
+			moveDown = false;
 		}
 		if(moveLeft){
 			if(this.player.positionx > 0)
@@ -359,6 +361,7 @@ function Level(levelnumber){
 					this.player.positionx--;
 					this.enterRoom();
 				}
+			moveLeft = false;
 		}
 		if(moveRight){
 			if(this.player.positionx < 4)
@@ -367,6 +370,7 @@ function Level(levelnumber){
 					this.player.positionx++;
 					this.enterRoom();
 				}
+			moveRight = false;
 		}
 	}
 	
@@ -502,11 +506,6 @@ document.onkeydown = function(event){
 }
 
 document.onkeyup = function(event){
-	moveLeft = false;
-	moveUp = false;
-	moveRight = false;
-	moveDown = false;
-	interaction = false
 }
 //-----------------Level Design----------------------------------
 //room is the blocks of rooms that are allowed in this world. here you can just spawn rooms and edit them.
