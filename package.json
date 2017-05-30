@@ -1,0 +1,23 @@
+{
+  "name": "thief",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Project.js",
+  "dependencies": {
+    "jquery": "^3.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShuaKo/Thief.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShuaKo/Thief/issues"
+  },
+  "homepage": "https://github.com/ShuaKo/Thief#readme"
+}
