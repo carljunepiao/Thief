@@ -247,7 +247,7 @@ function Person(){
 }
 
 var mySound;
-mySound = new sound("vgame.mp3");
+mySound = new sound("Music/fastmusic.mp3");
 
 
 function Level(levelnumber){
