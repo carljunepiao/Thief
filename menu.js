@@ -1,27 +1,3 @@
-var mySound;
-mySound = new sound("Music/vgame.mp3");
-
-mySound.play();
-
-
-function sound(src) {
-    this.sound = document.createElement("audio");
-    this.sound.src = src;
-    this.sound.setAttribute("preload", "auto");
-    this.sound.setAttribute("controls", "none");
-    this.sound.style.display = "none";
-    
-    document.body.appendChild(this.sound);
-    
-    this.play = function(){
-        this.sound.play();
-    }
-    
-    this.stop = function(){
-        this.sound.pause();
-    }
-}
-
 document.getElementById("play").onclick = function () {
     location.href = "index.html";
 };
@@ -284,7 +260,7 @@ function Person(){
 }
 
 var mySound;
-mySound = new sound("Music/fastmusic.mp3");
+mySound = new sound("Music/rename.mp3");
 
 
 function Level(levelnumber){
@@ -697,7 +673,7 @@ function Update(){
             break;
         case 1:
             ctx.fillStyle = "#fff";
-            ctx.font = "30px Arial";
+            ctx.font = "40px Arial";
             ctx.fillText("  You Win!",150,200);
     }
     frame++;

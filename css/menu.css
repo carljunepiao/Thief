@@ -12,16 +12,37 @@ body {
     background-position:center;
     background-size:cover;
     background-blend-mode:medium;
-    background-opacity: 0.5;
+    background-opacity: 1.0;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
+.title > h1 {
+    margin-top: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgba(100,100,255,0);
+    padding: 10px 0;
+    padding: 0;
+
+    font-family: "Assassin$";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 140px;
+    line-height: 100%;
+    color: #F2F2F2;
+    mix-blend-mode: normal;
+    opacity: 1.00;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+}
+
 #splashscreen {
-    margin-top: 500px;
+    margin-top: 140px;
 }
 .enter{
-    margin: 30px auto;
+    margin: 15px auto;
     display:block;
     width:210px;
     height:50px;
@@ -72,7 +93,7 @@ body {
 }
 
 #overlay > h1 {
-    margin-top: 20px;
+    margin-top: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -133,5 +154,4 @@ body {
     color: #F2F2F2;
     opacity: 1.00;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
 }

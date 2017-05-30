@@ -976,9 +976,9 @@ function Update(){
 			Level3.fightGuard();
 			break;
 		case 4:
-			Level4.updateLevel() && Level4.current == Level4.requirements;
+			Level4.updateLevel();
 			Level4.draw();
-			if(Level4.Finish()){ // && Level2.current == Level2.requirements
+			if(Level4.Finish() && Level4.current == Level4.requirements){ // && Level2.current == Level2.requirements
 				levelctr++;
 			}
 			Level4.fightGuard();
@@ -987,6 +987,7 @@ function Update(){
 			ctx.fillStyle = "#fff";
             ctx.font = "40px Arial";
             ctx.fillText("  You Win!",150,200);
+            break;
 	}
 	frame++;
 	Counter -= Speed;
