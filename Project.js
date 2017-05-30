@@ -171,10 +171,11 @@ function Tile(tile_x, tile_y){
 			if(this.value == 0)
 				ctx.fillStyle = "#777";
 			else if(this.value == 1)
-				ctx.fillStyle = "#99bcff";
+				ctx.fillStyle = "#99bcff"; //color of player path
 		}
 		else
 			ctx.fillStyle = "#111";
+		
 		if(!this.topdoor)
 			topvalue = 2;
 		if(!this.downdoor)
