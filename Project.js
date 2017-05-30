@@ -148,25 +148,6 @@ function World(){
 	}
 }
 
-//Add controls later
-function sound(src) {
-    this.sound = document.createElement("audio");
-    this.sound.src = src;
-    this.sound.setAttribute("preload", "auto");
-    this.sound.setAttribute("controls", "none");
-    this.sound.style.display = "none";
-    
-    document.body.appendChild(this.sound);
-    
-    this.play = function(){
-        this.sound.play();
-    }
-    
-    this.stop = function(){
-        this.sound.pause();
-    }
-}
-
 function Tile(tile_x, tile_y){
 	this.scale = 50; //the size of the entire tile on x axiz and y axis
 	this.positionx = tile_x; //the x-position of the tile in the canvas
@@ -240,6 +221,25 @@ function Person(){
 
 var mySound;
 mySound = new sound("vgame.mp3");
+
+//Add controls later
+function sound(src) {
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    
+    document.body.appendChild(this.sound);
+    
+    this.play = function(){
+        this.sound.play();
+    }
+    
+    this.stop = function(){
+        this.sound.pause();
+    }
+}
 
 function Level(levelnumber){
 	this.value = levelnumber;
