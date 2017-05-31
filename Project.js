@@ -994,3 +994,8 @@ function Update(){
 }
 //setInterval - loops a function update for every 40 ms
 setInterval(Update,100);
+
+
+document.getElementById("back").onclick = function () {
+    location.href = "menu.html";
+};

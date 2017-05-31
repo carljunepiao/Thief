@@ -2,6 +2,15 @@ document.getElementById("play").onclick = function () {
     location.href = "index.html";
 };
 
+
+function cOn() {
+    document.getElementById("credits").style.display = "block";
+}
+
+function cOff() {
+    document.getElementById("credits").style.display = "none";
+}
+
 function on() {
     document.getElementById("overlay").style.display = "block";
 }
