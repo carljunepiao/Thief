@@ -997,5 +997,5 @@ setInterval(Update,100);
 
 
 document.getElementById("back").onclick = function () {
-    location.href = "menu.html";
+    location.href = "index.html";
 };
