@@ -4,8 +4,8 @@
 	<p>A game applied with finite automata. The game is a maze game in 2D where finite automata is applied in the movement 		of the character and the maaze itself.</p>
 </div>
 
-<h3>Menu ScreenShot</h3>
-
+<h3>Menu Screenshot</h3>
+![Alt text](/Thief Screenshot/THIEF.png?raw=true "Menu")
 <h3>Instructions Screenshot</h3>
 
 <h3>Credits Screenshot</h3>
