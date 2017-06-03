@@ -5,6 +5,7 @@
 </div>
 
 <h3>Menu Screenshot</h3>
+<img src="https://github.com/carljunepiao/Thief/blob/master/Thief%20Screenshot/THIEF.png">
 ![solarized palette](https://github.com/carljunepiao/Thief/blob/master/Thief%20Screenshot/THIEF.png?raw=true "Menu")
 <h3>Instructions Screenshot</h3>
 
