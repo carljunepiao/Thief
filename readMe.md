@@ -5,7 +5,7 @@
 </div>
 
 <h3>Menu Screenshot</h3>
-![Alt text](Thief/blob/master/Thief%20Screenshot/THIEF.png?raw=true "Menu")
+![Alt text](https://github.com/carljunepiao/Thief/blob/master/Thief%20Screenshot/THIEF.png?raw=true "Menu")
 <h3>Instructions Screenshot</h3>
 
 <h3>Credits Screenshot</h3>
