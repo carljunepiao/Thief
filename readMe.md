@@ -21,10 +21,13 @@
 </ul>
 
 <h3>MUSIC FROM:</h3>
+<ul>
 	1. http://freemusicarchive.org/search/?sort=track_date_published&d=1&quicksearch=game
 	2. http://freemusicarchive.org/music/BoxCat_Games/
-
+</ul>
 <h3>MEMBERS:</h3>
+<ul>
 	1. Joshua Majait
 	2. Charlito Piao
 	3. Dave Irasusta
+</ul>
