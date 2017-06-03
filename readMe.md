@@ -6,12 +6,18 @@
 
 <h3>Menu Screenshot</h3>
 <img src="https://github.com/carljunepiao/Thief/blob/master/Thief%20Screenshot/THIEF.png">
-![solarized palette](https://github.com/carljunepiao/Thief/blob/master/Thief%20Screenshot/THIEF.png?raw=true "Menu")
-<h3>Instructions Screenshot</h3>
-
-<h3>Credits Screenshot</h3>
 
 <h3>Gameplay</h3>
+<img src="https://github.com/carljunepiao/Thief/blob/master/Thief%20Screenshot/Screenshot%20from%202017-06-03%2023-12-55.png">
+
+<h3>Instructions Screenshot</h3>
+<img src="https://github.com/carljunepiao/Thief/blob/master/Thief%20Screenshot/Screenshot%20from%202017-06-03%2023-13-24.png">
+
+
+<h3>Credits Screenshot</h3>
+<img src="https://github.com/carljunepiao/Thief/blob/master/Thief%20Screenshot/Screenshot%20from%202017-06-03%2023-13-36.png">
+
+
 
 
 <h3>TECHNOLOGIES USED:</h3>
@@ -23,8 +29,8 @@
 
 <h3>MUSIC FROM:</h3>
 <ul>
-	1. http://freemusicarchive.org/search/?sort=track_date_published&d=1&quicksearch=game
-	2. http://freemusicarchive.org/music/BoxCat_Games/
+	<li>1. http://freemusicarchive.org/search/?sort=track_date_published&d=1&quicksearch=game</li>
+	<li>2. http://freemusicarchive.org/music/BoxCat_Games/</li>
 </ul>
 <h3>MEMBERS:</h3>
 <ul>
